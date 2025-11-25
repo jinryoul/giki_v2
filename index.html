@@ -1,0 +1,111 @@
+<!doctype html GIKI-chat V1>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <title>MOIP AI 심사도우미 'GIKI'</title>
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+          sans-serif;
+        background-color: #c9c9c9; /* 최외각 색상 */
+        overflow: hidden; /* 세로 스크롤 제거 */
+      }
+
+      .page-wrapper {
+        max-width: 1200px;
+        height: 100%; /* 전체 화면 높이 사용 */
+        margin: 0 auto;
+        padding: 5px;
+        background: #000000; /* 채팅창을 감싼 영역 색상 */
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        display: flex;
+        flex-direction: column; /* 헤더 + 채팅 영역 세로 배치 */
+      }
+
+      .header {
+        display: flex;
+        align-items: center; /* 수직 정렬 */
+        justify-content: space-between; /* 좌측 텍스트 / 우측 로고 */
+        gap: 32px;
+        padding: 12px 40px;
+        background-color: #000000; /* 헤더 배경 검정색 */
+        box-sizing: border-box;
+      }
+
+      .header-text {
+        display: flex;
+        flex-direction: column;
+      }
+
+      .header-title {
+        font-size: 26px;
+        font-weight: 700;
+        color: #ffffff; /* 제목 흰색 */
+        margin-bottom: 4px;
+      }
+
+      .header-subtitle {
+        font-size: 14px;
+        color: #cfcfcf; /* 부제 연한 회색 */
+      }
+
+      /* 로고 크기/여백 및 강조 */
+      .header-logo {
+        height: 150px; /* 로고 높이 키우기 */
+        width: auto; /* 비율 유지 */
+        background-color: transparent; /* 혹시 모를 배경 제거 */
+        filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.6));
+      }
+
+      .chat-frame-wrapper {
+        flex: 1; /* 남은 높이를 모두 차지 */
+        border-top: 1px solid #333;
+        border-radius: 0 0 8px 8px;
+        overflow: hidden;
+        margin-top: 4px;
+        background-color: #000000;
+      }
+
+      .chat-frame-wrapper iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="page-wrapper">
+      <!-- 상단 로고 + 제목 영역 -->
+      <div class="header">
+        <div class="header-text">
+          <div class="header-title">지식재산처 AI 심사도우미 '지키(GIKI)'</div>
+          <div class="header-subtitle">
+            특허법, 심사기준, 심사실무가이드 기초로 문의사항을 검색해드리겠습니다.
+          </div>
+        </div>
+
+        <!-- 같은 폴더에 GIKI_real_v5_transparent.png가 있어야 합니다 -->
+        <img
+          src="GIKI_real_v5_transparent.png"
+          alt="MOIP GIKI"
+          class="header-logo"
+        />
+      </div>
+
+      <!-- 아래 박스 안에 n8n Hosted Chat을 그대로 표시 -->
+      <div class="chat-frame-wrapper">
+        <iframe
+          src="https://economic-techniques-forming-madonna.trycloudflare.com/webhook/1eae1690-8b3f-4dbd-977b-0550eee0561a/chat"
+        ></iframe>
+      </div>
+    </div>
+  </body>
+</html>
+
